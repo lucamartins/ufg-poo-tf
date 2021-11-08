@@ -176,6 +176,12 @@ public class Netflix {
       }
 
       // Funcao 6 - Gerar Sinopse
+      else if (opcao == opcoes[5]) {
+        if (titulos.isEmpty()) JOptionPane.showMessageDialog(null, "Ainda não há títulos.");
+        else {
+          JOptionPane.showMessageDialog(null, titulos.get(0).gerarSinopse());
+        }
+      }
 
       // Funcao 7 - Modificar genero
 

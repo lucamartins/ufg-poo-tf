@@ -68,8 +68,16 @@ public abstract class Titulo implements Serializable {
     this.avaliacao = soma / avaliacoes.size();
   }
 
-  public void gerarSinopse() {
+  public String gerarSinopse() {
+    String tipo;
+    if (this instanceof Filme) tipo = "Filme";
+    else if (this instanceof Serie) tipo = "Série";
+    else tipo = "Documentário";
+
     StringBuilder sinopse = new StringBuilder();
+    sinopse.append("Eu sou um ").append(tipo);
+
+    return sinopse.toString();
   }
 
   public void adicionarGenero(Genero genero) {
