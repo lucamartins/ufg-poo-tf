@@ -1,8 +1,7 @@
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Documentario extends Titulo {
-  protected ArrayList<Documentario> documentariosSemelhantes;
+  protected ArrayList<Documentario> documentariosSemelhantes = new ArrayList<>();
 
   public Documentario(String nome, String descricao, String diretor, String dataLancamento) {
     super(nome, descricao, diretor, dataLancamento);

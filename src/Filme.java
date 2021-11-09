@@ -1,8 +1,7 @@
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Filme extends Titulo {
-  protected ArrayList<Filme> filmesSemelhantes;
+  protected ArrayList<Filme> filmesSemelhantes = new ArrayList<>();
 
   public Filme(String nome, String descricao, String diretor, String dataLancamento) {
     super(nome, descricao, diretor, dataLancamento);
@@ -19,11 +18,11 @@ public class Filme extends Titulo {
   }
 
   public void adicionarFilmeSemelhante(Filme filme) {
-    // ...
+    this.filmesSemelhantes.add(filme);
   }
 
   public void removerFilmeSemelhante(Filme filme) {
-    // ...
+    this.filmesSemelhantes.remove(filme);
   }
 
   @Override

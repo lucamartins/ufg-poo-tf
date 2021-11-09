@@ -74,17 +74,6 @@ public abstract class Titulo implements Serializable {
     else if (this instanceof Serie) tipo = "Série";
     else tipo = "Documentário";
 
-    StringBuilder sinopse = new StringBuilder();
-    sinopse.append("Eu sou um ").append(tipo);
-
-    return sinopse.toString();
-  }
-
-  public void adicionarGenero(Genero genero) {
-    // ...
-  }
-
-  public void removerGenero(Genero genero) {
-    // ...
+    return tipo + " dirigido por " + this.getDiretor() + " lançado em " + this.getDataLancamento() + "\nResumo: " + this.getDescricao();
   }
 }

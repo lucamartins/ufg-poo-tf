@@ -1,11 +1,9 @@
-import java.lang.reflect.Array;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Serie extends Titulo {
   protected int qntEpisodios;
   protected int qntTemporadas;
-  protected ArrayList<Serie> seriesSemelhantes;
+  protected ArrayList<Serie> seriesSemelhantes = new ArrayList<>();
 
   public Serie(String nome, String descricao, String diretor, String dataLancamento, int qntEpisodios, int qntTemporadas) {
     super(nome, descricao, diretor, dataLancamento);
