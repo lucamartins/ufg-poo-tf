@@ -13,7 +13,13 @@ public class Netflix {
 
     // Banco de dados 1 - Titulos
     Titulo titulo;
-    FileInputStream fileIn = new FileInputStream("db.txt");
+    FileInputStream fileIn;
+    try {
+      fileIn = new FileInputStream("db.txt");
+    } catch (FileNotFoundException e) {
+      System.out.println("Arquivo do banco de dados nao encontrado.");
+      throw new FileNotFoundException();
+    }
 
     try {
       ObjectInputStream objIn = new ObjectInputStream(fileIn);
@@ -485,7 +491,7 @@ public class Netflix {
       opcao = (String)JOptionPane.showInputDialog(null, "O que você deseja fazer?", "Menu inicial", JOptionPane.QUESTION_MESSAGE, null, opcoes, "Selecionar..");
     }
 
-    // Salvar todos dados no banco de dados 1
+    // Salvar todos dados no banco de dados 1 - titulos
     FileOutputStream fileOut = new FileOutputStream("db.txt");
     ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
     titulos.forEach((tit) -> {
@@ -497,7 +503,7 @@ public class Netflix {
     });
     objOut.close();
 
-    // Salvar todos dados no banco de dados 2
+    // Salvar todos dados no banco de dados 2 - generos
     FileOutputStream fileOut2 = new FileOutputStream("db2.txt");
     ObjectOutputStream objOut2 = new ObjectOutputStream(fileOut2);
     generos.forEach((gen) -> {
@@ -509,7 +515,7 @@ public class Netflix {
     });
     objOut2.close();
 
-    // Goodbye
+    // Mensagem de despedida
     JOptionPane.showMessageDialog(null, "Até mais, " + username + ". " + "Esperamos te ver novamente!");
   }
 }
