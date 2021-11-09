@@ -18,10 +18,25 @@ public class Documentario extends Titulo {
   }
 
   public void adicionarDocSemelhante(Documentario doc) {
-    // ...
+    this.documentariosSemelhantes.add(doc);
   }
 
   public void removerDocSemelhante(Documentario doc) {
-    // ...
+    this.documentariosSemelhantes.remove(doc);
+  }
+
+  @Override
+  public String toString() {
+    return "Documentario{" +
+            "documentariosSemelhantes=" + documentariosSemelhantes +
+            ", id=" + id +
+            ", nome='" + nome + '\'' +
+            ", descricao='" + descricao + '\'' +
+            ", avaliacoes=" + avaliacoes +
+            ", avaliacao=" + avaliacao +
+            ", generos=" + generos +
+            ", diretor='" + diretor + '\'' +
+            ", dataLancamento='" + dataLancamento + '\'' +
+            '}';
   }
 }

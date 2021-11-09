@@ -8,6 +8,7 @@ public class Genero {
 
   public Genero(String nome) {
     this.nome = nome;
+    this.id = auxID++;
   }
 
   public String getNome() {

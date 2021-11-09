@@ -38,11 +38,11 @@ public class Serie extends Titulo {
   }
 
   public void adicionarSerieSemelhante(Serie serie) {
-    // ...
+    this.seriesSemelhantes.add(serie);
   }
 
   public void removerSerieSemelhante(Serie serie) {
-    // ...
+    this.seriesSemelhantes.remove(serie);
   }
 
   @Override
